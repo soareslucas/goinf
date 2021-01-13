@@ -3,9 +3,9 @@
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: *");
 
-    require 'include/PHPmailer.php';
-    require 'include/SMTP.php';
-    require 'include/Exception.php';
+    require_once('include/PHPmailer.php');
+    require_once('include/SMTP.php');
+    require_once('include/Exception.php'); 
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
