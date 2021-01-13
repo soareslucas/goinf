@@ -696,7 +696,7 @@
 
 									<div class="clear topmargin-sm"></div>
 
-									<abbr title="Número de Telefone"><strong>Phone:</strong></abbr> +55 (62) 99468-3803<br>
+									<abbr title="Número de Telefone"><strong>Telefone:</strong></abbr> +55 (62) 99468-3803<br>
 									<!-- <abbr title="Endereço de Email"><strong>Email:</strong></abbr> lucas.soarod@gmail.com -->
 								</div>
 							</div>
