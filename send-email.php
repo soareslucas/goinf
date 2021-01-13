@@ -1,10 +1,62 @@
 <?php
-  $nome = $_POST['nome'];
-  $email= $_POST['email'];
-  $mensagem= $_POST['mensagem'].'<br>'.$_POST['telefone'];
-  $to = "lucas.soarod@gmail.com";
-  $assunto = $_POST['assunto'];
-  mail($to,$assunto,$mensagem);
 
-  die('foi ok');
+
+    require 'include/PHPmailer.php';
+    require 'include/SMTP.php';
+    require 'include/Exception.php';
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+
+    //require_once "vendor/autoload.php";
+
+    //PHPMailer Object
+    $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
+
+
+
+
+    //Enable SMTP debugging.
+    $mail->SMTPDebug = 3;                               
+    //Set PHPMailer to use SMTP.
+    $mail->isSMTP();            
+    //Set SMTP host name                          
+    $mail->Host = "smtp.gmail.com";
+    //Set this to true if SMTP host requires authentication to send email
+    $mail->SMTPAuth = true;                          
+    //Provide username and password     
+    $mail->Username = "lucas.soarod@gmail.com";                 
+    $mail->Password = "Lucas-0601";                           
+    //If SMTP requires TLS encryption then set it
+    $mail->SMTPSecure = "tls";                           
+    //Set TCP port to connect to
+    $mail->Port = 587;                                   
+
+
+    //From email address and name
+    $mail->From = $_POST['email'];
+    $mail->FromName = $_POST['nome'];
+
+    //To address and name
+    $mail->addAddress("lucas.soarod@gmail.com"); //Recipient name is optional
+
+    //Address to which recipient will reply
+    $mail->addReplyTo( $_POST['email'], "Reply");
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(true);
+
+    $mail->Subject = $_POST['assunto'];
+    $mail->Body = $_POST['mensagem'].'<br>'.$_POST['telefone'];
+    $mail->AltBody = $_POST['mensagem'].'<br>'.$_POST['telefone'];
+
+    try {
+        $mail->send();
+        echo "Message has been sent successfully";
+    } catch (Exception $e) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+
+
 ?>
