@@ -16,7 +16,6 @@
 
 
 
-
     //Enable SMTP debugging.
     $mail->SMTPDebug = 3;                               
     //Set PHPMailer to use SMTP.
@@ -26,30 +25,27 @@
     //Set this to true if SMTP host requires authentication to send email
     $mail->SMTPAuth = true;                          
     //Provide username and password     
-    $mail->Username = "lucas.soarod@gmail.com";                 
+    $mail->Username = "goinf.ti@gmail.com";                 
     $mail->Password = "Lucas-0601";                           
     //If SMTP requires TLS encryption then set it
     $mail->SMTPSecure = "tls";                           
     //Set TCP port to connect to
     $mail->Port = 587;                                   
 
+    $mail->addReplyTo($_POST['email'], $_POST['nome']);
+    
+    //To address and name
+    $mail->addAddress("goinf.ti@gmail.com"); //Recipient name is optional
 
-    //From email address and name
     $mail->From = $_POST['email'];
     $mail->FromName = $_POST['nome'];
 
-    //To address and name
-    $mail->addAddress("lucas.soarod@gmail.com"); //Recipient name is optional
-
-    //Address to which recipient will reply
-    $mail->addReplyTo( $_POST['email'], "Reply");
 
     //Send HTML or Plain Text email
     $mail->isHTML(true);
 
     $mail->Subject = $_POST['assunto'];
-    $mail->Body = $_POST['mensagem'].'<br>'.$_POST['telefone'];
-    $mail->AltBody = $_POST['mensagem'].'<br>'.$_POST['telefone'];
+    $mail->Body = $_POST['mensagem'].'<br> Telefone: '.$_POST['telefone'].'<br> Email: '.$_POST['email'];
 
     try {
         $mail->send();
