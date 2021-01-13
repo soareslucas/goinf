@@ -70,7 +70,7 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo">
-							<a href="index.html" class="standard-logo" data-dark-logo="one-page/images/canvasone-dark.png"><img src="one-page/images/goinf_logo_basic.png" alt="Canvas Logo"></a>
+							<a href="index.html" class="standard-logo" data-dark-logo="one-page/images/goinf_logo_basic.png"><img src="one-page/images/goinf_logo_basic.png" alt="Canvas Logo"></a>
 							<a href="index.html" class="retina-logo" data-dark-logo="one-page/images/canvasone-dark@2x.png"><img src="one-page/images/canvasone@2x.png" alt="Canvas Logo"></a>
 						</div><!-- #logo end -->
 
@@ -711,9 +711,9 @@
 
 								<div class="form-result"></div>
 
-								<form class="row mb-0" id="template-contactform" name="template-contactform" action="./send-email.php" method="post">
+								<form class="row mb-0" id="contact" name="contact">
 
-									<div class="form-process">
+									<div id="spinnerContact" class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scale-ripple">
 												<div></div>
@@ -747,7 +747,7 @@
 									</div>
 
 									<div class="col-12 center mb-4">
-										<button class="button button-border button-circle font-weight-medium ml-0 topmargin-sm" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envie a Mensagem</button>
+										<button class="button button-border button-circle font-weight-medium ml-0 topmargin-sm" type="button" id="contactform-submit" name="contactform-submit" onClick="javaScript: enviaEmail()" >Envie a Mensagem</button>
 										<br>
 										<small style="display: block; font-size: 13px; margin-top: 15px;">Faremos o nosso melhor para entrar em contato com você dentro de 6 a 8 horas úteis.</small>
 									</div>
@@ -870,6 +870,36 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="js/functions.js"></script>
+
+
+
+	<script>
+
+		function enviaEmail(){		
+
+
+
+			$("#spinnerContact").show();
+			var values = $("#contact").serialize();
+
+			$.ajax({
+				url: "./send-email.php",
+				type: "post",
+				data: values ,
+				success: function (response) {
+					console.log(response);
+					$("#spinnerContact").hide();
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					console.log(textStatus, errorThrown);
+				}
+			});
+		
+		}
+
+
+	</script>
+
 
 </body>
 </html>
