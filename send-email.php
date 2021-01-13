@@ -1,16 +1,14 @@
 <?php
 
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: *");
-
-    require_once('include/PHPmailer.php');
-    require_once('include/SMTP.php');
-    require_once('include/Exception.php');          
-
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    //require_once "vendor/autoload.php";
+/*     require 'vendor/phpmailer/phpmailer/src/Exception.php';
+    require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+    require 'vendor/phpmailer/phpmailer/src/SMTP.php';     */    
+
+
+    require_once "vendor/autoload.php";
 
     //PHPMailer Object
     $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
