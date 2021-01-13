@@ -70,8 +70,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo">
-							<a href="index.html" class="standard-logo" data-dark-logo="one-page/images/goinf_logo_basic.png"><img src="one-page/images/goinf_logo_basic.png" alt="Canvas Logo"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="one-page/images/canvasone-dark@2x.png"><img src="one-page/images/canvasone@2x.png" alt="Canvas Logo"></a>
+							<a href="index.php" class="standard-logo" data-dark-logo="one-page/images/goinf_logo_basic.png"><img src="one-page/images/goinf_logo_basic.png" alt="GOinf Logo"></a>
+							<a href="index.php" class="retina-logo" data-dark-logo="one-page/images/goinf_logo_basic.png"><img src="one-page/images/goinf_logo_basic.png" alt="GOinf Logo"></a>
 						</div><!-- #logo end -->
 
 						<div id="primary-menu-trigger">
@@ -509,7 +509,7 @@
 
 					<div class="section dark m-0">
 						<div class="mx-auto center" style="max-width: 900px;">
-							<h2 class="mb-0 font-weight-light ls1">Gostou dos nossos serviços? Entre em <a href="#" data-scrollto="#template-contactform" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Contato</a></h2>
+							<h2 class="mb-0 font-weight-light ls1">Gostou dos nossos serviços? Entre em <a href="#" data-scrollto="#contact" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Contato</a></h2>
 						</div>
 					</div>
 
